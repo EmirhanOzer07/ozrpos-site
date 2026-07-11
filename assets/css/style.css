@@ -269,6 +269,21 @@ section { padding: 84px 0; }
 .icerik-sayfa p, .icerik-sayfa li { color: var(--metin); font-size: 15.5px; margin-bottom: 10px; }
 .icerik-sayfa ul { padding-left: 22px; }
 
+/* ---------- Telefon satırı + sabit WhatsApp balonu ---------- */
+.tel-satiri { margin-top: 18px; font-size: 15px; color: var(--metin-soluk); }
+.tel-satiri a { font-weight: 800; color: var(--lacivert); font-size: 17px; }
+.tel-satiri a:hover { color: var(--cyan-koyu); }
+.wa-balon {
+  position: fixed; right: 22px; bottom: 22px; z-index: 60;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, .45);
+  transition: transform .15s ease;
+}
+.wa-balon:hover { transform: scale(1.08); }
+.wa-balon svg { width: 30px; height: 30px; }
+
 /* ---------- Duyarlı (responsive) ---------- */
 @media (max-width: 960px) {
   .hero-ic { grid-template-columns: 1fr; gap: 40px; }

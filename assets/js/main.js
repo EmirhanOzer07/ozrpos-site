@@ -11,6 +11,7 @@
 // Boş bırakılırsa WhatsApp butonları gizlenir, e-posta öne çıkar.
 const WHATSAPP_NUMARA = "905462782300";
 const WHATSAPP_MESAJ = "Merhaba, OZR POS hakkında bilgi almak istiyorum.";
+const TELEFON_GOSTER = "0546 278 23 00";
 const EPOSTA = "emirhann0077@gmail.com";
 
 // --- GitHub Releases -------------------------------------------
@@ -40,6 +41,16 @@ function iletisimKur() {
     a.href = "mailto:" + EPOSTA + "?subject=" + encodeURIComponent("OZR POS Bilgi Talebi");
   });
   document.querySelectorAll(".eposta-metin").forEach(function (el) { el.textContent = EPOSTA; });
+
+  document.querySelectorAll(".tel-link").forEach(function (a) {
+    if (WHATSAPP_NUMARA) {
+      a.href = "tel:+" + WHATSAPP_NUMARA;
+      var m = a.querySelector(".tel-metin");
+      if (m) m.textContent = TELEFON_GOSTER;
+    } else {
+      a.style.display = "none";
+    }
+  });
 }
 
 function surumBilgisiCek() {
