@@ -9,7 +9,7 @@
 // --- İLETİŞİM AYARLARI (tek yer) -------------------------------
 // WhatsApp numarası: ülke koduyla, boşluksuz. Örn: "905551112233"
 // Boş bırakılırsa WhatsApp butonları gizlenir, e-posta öne çıkar.
-const WHATSAPP_NUMARA = "";
+const WHATSAPP_NUMARA = "905462782300";
 const WHATSAPP_MESAJ = "Merhaba, OZR POS hakkında bilgi almak istiyorum.";
 const EPOSTA = "emirhann0077@gmail.com";
 
