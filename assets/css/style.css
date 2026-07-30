@@ -152,20 +152,76 @@ section { padding: 84px 0; }
 .ekran-kart img { aspect-ratio: 16/10; object-fit: cover; object-position: top; width: 100%; }
 .ekran-kart .ekran-adi { padding: 14px 18px; font-weight: 700; font-size: 15px; color: var(--lacivert); }
 
-/* ---------- Nasıl çalışır ---------- */
-.adimlar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.adim {
-  text-align: center; padding: 36px 26px;
-  background: var(--beyaz); border: 1px solid var(--sinir); border-radius: var(--radius);
-}
 .adim-no {
   width: 46px; height: 46px; border-radius: 50%; margin: 0 auto 18px;
   background: var(--cyan); color: var(--lacivert);
   display: flex; align-items: center; justify-content: center;
   font-weight: 800; font-size: 20px;
 }
-.adim h3 { font-size: 18px; font-weight: 800; color: var(--lacivert); margin-bottom: 8px; }
-.adim p { font-size: 15px; color: var(--metin-soluk); }
+
+/* ---------- Büyütülebilir görsel çerçeveleri (lightbox tetikleyici) ---------- */
+.gorsel-cerceve { position: relative; overflow: hidden; border-radius: inherit; cursor: zoom-in; }
+.gorsel-cerceve::after {
+  content: "🔍 Büyüt"; position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(13, 27, 42, .55); color: #fff; font-weight: 700; font-size: 14.5px;
+  opacity: 0; transition: opacity .18s ease; pointer-events: none;
+}
+.gorsel-cerceve:hover::after { opacity: 1; }
+.gorsel-cerceve img { cursor: zoom-in; }
+
+/* ---------- Demo süreci (zikzak akış) ---------- */
+.demo-akis { background: var(--beyaz); }
+.demo-satir {
+  display: flex; align-items: center; gap: 56px;
+  margin-bottom: 64px;
+}
+.demo-satir:last-of-type { margin-bottom: 48px; }
+.demo-satir.ters { flex-direction: row-reverse; }
+.demo-gorsel { flex: 1 1 0; display: flex; justify-content: center; }
+.demo-gorsel .gorsel-cerceve {
+  border-radius: var(--radius); border: 1px solid var(--sinir); box-shadow: var(--golge);
+  max-width: 420px;
+}
+.demo-gorsel img { width: 100%; }
+.demo-metin { flex: 1 1 0; }
+.demo-metin .adim-no { margin: 0 0 16px 0; }
+.demo-metin h3 { font-size: 21px; font-weight: 800; color: var(--lacivert); margin-bottom: 10px; letter-spacing: -.2px; }
+.demo-metin p { font-size: 16px; color: var(--metin-soluk); }
+
+/* ---------- Lightbox (görsel büyütme) ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(9, 16, 24, .92);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity .2s ease;
+  padding: 40px;
+}
+.lightbox.acik { opacity: 1; visibility: visible; }
+.lightbox-ic { max-width: min(920px, 100%); text-align: center; }
+.lightbox-ic img {
+  max-width: 100%; max-height: 76vh; margin: 0 auto;
+  border-radius: 10px; box-shadow: var(--golge-buyuk);
+}
+.lightbox-baslik { color: #dbe6f0; margin-top: 18px; font-size: 15px; font-weight: 600; }
+.lightbox-kapat {
+  position: absolute; top: 20px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,.12); color: #fff; font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s ease;
+}
+.lightbox-kapat:hover { background: rgba(255,255,255,.24); }
+.lightbox-ok {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,.12); color: #fff; font-size: 24px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s ease;
+}
+.lightbox-ok:hover { background: rgba(255,255,255,.24); }
+.lightbox-sol { left: 24px; }
+.lightbox-sag { right: 24px; }
 
 /* ---------- Demo bandı ---------- */
 .demo-bandi {
@@ -290,8 +346,9 @@ section { padding: 84px 0; }
   .hero h1 { font-size: 34px; }
   .ozellik-izgara { grid-template-columns: repeat(2, 1fr); }
   .ekran-izgara { grid-template-columns: repeat(2, 1fr); }
-  .adimlar { grid-template-columns: 1fr; }
   .guven-ic { justify-content: center; }
+  .demo-satir, .demo-satir.ters { flex-direction: column; gap: 28px; }
+  .demo-satir { margin-bottom: 48px; }
 }
 @media (max-width: 640px) {
   .ust-menu { display: none; position: absolute; top: 68px; left: 0; right: 0;
@@ -307,4 +364,10 @@ section { padding: 84px 0; }
   .demo-bandi { padding: 40px 24px; }
   .indir-kutu { margin-left: 16px; margin-right: 16px; padding: 30px 22px; }
   .btn-buyuk { padding: 15px 26px; font-size: 16px; }
+  .gorsel-cerceve::after { font-size: 13px; }
+  .lightbox { padding: 16px; }
+  .lightbox-kapat { top: 10px; right: 10px; width: 38px; height: 38px; font-size: 18px; }
+  .lightbox-ok { width: 42px; height: 42px; font-size: 20px; }
+  .lightbox-sol { left: 8px; }
+  .lightbox-sag { right: 8px; }
 }

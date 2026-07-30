@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   surumBilgisiCek();
   sssKur();
   mobilMenuKur();
+  lightboxKur();
 });
 
 function iletisimKur() {
@@ -97,5 +98,64 @@ function mobilMenuKur() {
   dugme.addEventListener("click", function () { menu.classList.toggle("acik"); });
   menu.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", function () { menu.classList.remove("acik"); });
+  });
+}
+
+function lightboxKur() {
+  var gorseller = Array.prototype.slice.call(document.querySelectorAll("img[data-buyut]"));
+  if (!gorseller.length) return;
+
+  var kutu = document.createElement("div");
+  kutu.className = "lightbox";
+  kutu.innerHTML =
+    '<button class="lightbox-kapat" aria-label="Kapat">✕</button>' +
+    '<button class="lightbox-ok lightbox-sol" aria-label="Önceki görsel">‹</button>' +
+    '<div class="lightbox-ic">' +
+    '<img src="" alt="">' +
+    '<div class="lightbox-baslik"></div>' +
+    '</div>' +
+    '<button class="lightbox-ok lightbox-sag" aria-label="Sonraki görsel">›</button>';
+  document.body.appendChild(kutu);
+
+  var img = kutu.querySelector("img");
+  var baslik = kutu.querySelector(".lightbox-baslik");
+  var mevcut = 0;
+
+  function goster(i) {
+    mevcut = (i + gorseller.length) % gorseller.length;
+    var kaynak = gorseller[mevcut];
+    img.src = kaynak.src;
+    img.alt = kaynak.alt || "";
+    baslik.textContent = kaynak.alt || "";
+  }
+
+  function ac(i) {
+    goster(i);
+    kutu.classList.add("acik");
+    document.body.style.overflow = "hidden";
+  }
+
+  function kapat() {
+    kutu.classList.remove("acik");
+    document.body.style.overflow = "";
+  }
+
+  gorseller.forEach(function (el, i) {
+    el.addEventListener("click", function () { ac(i); });
+  });
+
+  kutu.querySelector(".lightbox-kapat").addEventListener("click", kapat);
+  kutu.querySelector(".lightbox-sol").addEventListener("click", function () { goster(mevcut - 1); });
+  kutu.querySelector(".lightbox-sag").addEventListener("click", function () { goster(mevcut + 1); });
+
+  kutu.addEventListener("click", function (e) {
+    if (e.target === kutu) kapat();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (!kutu.classList.contains("acik")) return;
+    if (e.key === "Escape") kapat();
+    else if (e.key === "ArrowLeft") goster(mevcut - 1);
+    else if (e.key === "ArrowRight") goster(mevcut + 1);
   });
 }
