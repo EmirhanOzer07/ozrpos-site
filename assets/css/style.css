@@ -142,11 +142,12 @@ section { padding: 84px 0; }
 
 /* ---------- Ekran görüntüleri ---------- */
 .ekranlar { background: var(--zemin); }
-.ekran-izgara { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.ekran-izgara { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
 .ekran-kart {
   background: var(--beyaz); border-radius: var(--radius); overflow: hidden;
   border: 1px solid var(--sinir); box-shadow: var(--golge);
   transition: transform .18s ease;
+  flex: 1 1 300px; max-width: 340px;
 }
 .ekran-kart:hover { transform: translateY(-5px); }
 .ekran-kart img { aspect-ratio: 16/10; object-fit: cover; object-position: top; width: 100%; }
@@ -345,21 +346,27 @@ section { padding: 84px 0; }
   .hero-ic { grid-template-columns: 1fr; gap: 40px; }
   .hero h1 { font-size: 34px; }
   .ozellik-izgara { grid-template-columns: repeat(2, 1fr); }
-  .ekran-izgara { grid-template-columns: repeat(2, 1fr); }
+  .ekran-kart { flex-basis: 260px; max-width: 47%; }
   .guven-ic { justify-content: center; }
   .demo-satir, .demo-satir.ters { flex-direction: column; gap: 28px; }
   .demo-satir { margin-bottom: 48px; }
 }
-@media (max-width: 640px) {
+/* Üst menü, 5 link + buton eklendiğinde masaüstünde bile dar pencerelerde
+   sıkışabiliyor — hamburger'e geçişi genel içerik kırılımından (640px)
+   daha erken tetikleyerek taşmayı önler. */
+@media (max-width: 880px) {
   .ust-menu { display: none; position: absolute; top: 68px; left: 0; right: 0;
     background: var(--lacivert); flex-direction: column; padding: 20px 24px; gap: 18px;
     border-bottom: 1px solid rgba(255,255,255,.08); }
   .ust-menu.acik { display: flex; }
   .menu-dugme { display: block; }
+}
+@media (max-width: 640px) {
   .hero { padding: 56px 0 48px; }
   .hero h1 { font-size: 29px; }
   section { padding: 56px 0; }
-  .ozellik-izgara, .ekran-izgara { grid-template-columns: 1fr; }
+  .ozellik-izgara { grid-template-columns: 1fr; }
+  .ekran-kart { flex-basis: 100%; max-width: 100%; }
   .bolum-baslik h2 { font-size: 27px; }
   .demo-bandi { padding: 40px 24px; }
   .indir-kutu { margin-left: 16px; margin-right: 16px; padding: 30px 22px; }
