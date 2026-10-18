@@ -3,7 +3,7 @@
    - WhatsApp / e-posta iletişim linklerini tek yerden kurar
    - En son sürümü GitHub Releases API'den çeker (indirme linki
      sürüm adına kilitlenmez, her release'te site güncellemesi gerekmez)
-   - SSS akordeonu ve mobil menü
+   - SSS akordeonu, mobil menü, görsel büyütme, kılavuz içindekiler
    ============================================================ */
 
 // --- İLETİŞİM AYARLARI (tek yer) -------------------------------
@@ -24,7 +24,37 @@ document.addEventListener("DOMContentLoaded", function () {
   sssKur();
   mobilMenuKur();
   lightboxKur();
+  kilavuzKur();
 });
+
+// Kılavuz içindekiler: masaüstünde hep açık + okunan bölümü vurgular;
+// dar ekranda kapalı başlar (içeriği itmesin), bölüme tıklayınca kapanır.
+function kilavuzKur() {
+  var kutu = document.querySelector(".kilavuz-icindekiler");
+  if (!kutu) return;
+  var dar = window.matchMedia("(max-width: 960px)");
+  if (dar.matches) kutu.removeAttribute("open");
+  kutu.querySelector("summary").addEventListener("click", function (e) {
+    if (!dar.matches) e.preventDefault();
+  });
+  var linkler = Array.prototype.slice.call(kutu.querySelectorAll("a[href^='#']"));
+  linkler.forEach(function (a) {
+    a.addEventListener("click", function () { if (dar.matches) kutu.removeAttribute("open"); });
+  });
+  if (!("IntersectionObserver" in window)) return;
+  var gozlemci = new IntersectionObserver(function (girdiler) {
+    girdiler.forEach(function (g) {
+      if (!g.isIntersecting) return;
+      linkler.forEach(function (a) {
+        a.classList.toggle("aktif", a.getAttribute("href") === "#" + g.target.id);
+      });
+    });
+  }, { rootMargin: "-90px 0px -65% 0px" });
+  linkler.forEach(function (a) {
+    var hedef = document.getElementById(a.getAttribute("href").slice(1));
+    if (hedef) gozlemci.observe(hedef);
+  });
+}
 
 function iletisimKur() {
   var waLinkler = document.querySelectorAll(".wa-link");

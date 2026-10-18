@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OZR POS Kullanım Kılavuzu — Kurulumdan Veresiyeye Adım Adım</title>
+  <meta name="description" content="OZR POS market satış programı kullanım kılavuzu: kurulum, demo ve lisans, kasa ekranı, klavye kısayolları, çoklu sepet, hızlı ürünler, veresiye defteri, ürün yükleme, raporlar, fiş yazıcı, yedekleme ve sorun giderme.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <meta name="theme-color" content="#0D1B2A">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="canonical" href="https://emirhanozer07.github.io/ozrpos-site/kilavuz.html">
+  <meta property="og:title" content="OZR POS Kullanım Kılavuzu">
+  <meta property="og:description" content="Kurulumdan veresiye defterine, kısayol tuşlarından yedeklemeye — OZR POS'u adım adım öğrenin.">
+  <meta property="og:image" content="https://emirhanozer07.github.io/ozrpos-site/assets/img/satis.png">
+  <meta property="og:url" content="https://emirhanozer07.github.io/ozrpos-site/kilavuz.html">
+  <meta property="og:type" content="article">
+</head>
+<body>
+
+<header class="ust-bar">
+  <div class="kapsayici ust-bar-ic">
+    <a href="index.html" class="marka">
+      <img src="assets/img/logo.png" alt="OZR POS logosu">
+      <span>OZR POS<small>MARKET SATIŞ SİSTEMİ</small></span>
+    </a>
+    <nav class="ust-menu">
+      <a href="index.html#ozellikler">Özellikler</a>
+      <a href="index.html#veresiye">Veresiye</a>
+      <a href="kilavuz.html" class="secili">Kılavuz</a>
+      <a href="index.html#sss">Sık Sorulanlar</a>
+      <a href="index.html#iletisim">İletişim</a>
+      <a href="indir.html" class="btn btn-birincil">Ücretsiz Dene</a>
+    </nav>
+    <button class="menu-dugme" aria-label="Menüyü aç">☰</button>
+  </div>
+</header>
+
+<div class="sayfa-baslik">
+  <div class="kapsayici">
+    <h1>Kullanım Kılavuzu</h1>
+    <p>Kurulumdan veresiye defterine, OZR POS'u adım adım öğrenin. Takıldığınız yerde WhatsApp'tan yazın.</p>
+  </div>
+</div>
+
+<div class="kilavuz-duzen">
+
+  <details class="kilavuz-icindekiler" open>
+    <summary>İçindekiler</summary>
+    <ol>
+      <li><a href="#kurulum">Kurulum</a></li>
+      <li><a href="#ilk-acilis">İlk açılış: demo ve lisans</a></li>
+      <li><a href="#giris">Giriş ve kullanıcılar</a></li>
+      <li><a href="#kasa">Kasa ekranında satış</a></li>
+      <li><a href="#kisayollar">Klavye kısayolları</a></li>
+      <li><a href="#coklu-sepet">Çoklu sepet</a></li>
+      <li><a href="#hizli-urunler">Hızlı ürün tuşları</a></li>
+      <li><a href="#veresiye">Veresiye defteri</a></li>
+      <li><a href="#urunler">Ürünler ve toplu yükleme</a></li>
+      <li><a href="#raporlar">Raporlar</a></li>
+      <li><a href="#yazici">Fiş yazıcı ve market adı</a></li>
+      <li><a href="#yedek">Yedekleme ve geri yükleme</a></li>
+      <li><a href="#guncelleme">Güncellemeler</a></li>
+      <li><a href="#sorun-giderme">Sorun giderme</a></li>
+      <li><a href="#destek">Destek</a></li>
+    </ol>
+  </details>
+
+  <main class="kilavuz-icerik">
+
+    <!-- 1 -->
+    <section id="kurulum">
+      <h2><span class="bolum-no">1</span> Kurulum</h2>
+      <p>OZR POS, Windows 10 ve 11'de çalışır. Güçlü bir bilgisayar gerekmez; yaklaşık 400 MB boş disk alanı ve 4 GB RAM yeterlidir.</p>
+      <ol>
+        <li><a href="indir.html">İndirme sayfasından</a> en son sürümü indirin (<code>OZRPos-vX.Y.Z.zip</code>).</li>
+        <li>ZIP dosyasına sağ tıklayıp <strong>"Tümünü ayıkla"</strong> deyin. Çıkan <code>OZRPos</code> klasörünü kalıcı bir yere koyun, örneğin <code>C:\OZRPos</code>.</li>
+        <li>Klasördeki <code>OZRPos.exe</code>'ye çift tıklayın. Masaüstüne kısayol oluşturmanızı öneririz.</li>
+      </ol>
+      <div class="kutu kutu-dikkat">
+        <p>⚠ <strong>"Program Files" klasörüne kurmayın.</strong> Program kendini güncellerken kendi klasörüne yazar. Windows bu klasörde yazma izni vermediği için güncelleme yapılamaz.</p>
+      </div>
+      <div class="kutu kutu-ipucu">
+        <p>💡 Windows ilk açılışta <strong>"Windows bilgisayarınızı korudu"</strong> diyebilir. Bu, yeni yayıncılara gösterilen standart bir uyarıdır: <strong>Ek bilgi → Yine de çalıştır</strong> deyin. Her sürümün SHA-256 doğrulama özeti indirme sayfasında açıkça yayınlanır.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="ilk-acilis">
+      <h2><span class="bolum-no">2</span> İlk açılış: demo ve lisans</h2>
+      <p>İlk açılışta iki seçenek görürsünüz:</p>
+      <ul>
+        <li><strong>Davetiye kodunuz varsa:</strong> 8 karakterlik kodu girin, market adınızı ve yönetici hesabınızı oluşturun.</li>
+        <li><strong>Kodunuz yoksa:</strong> <strong>"Demo Başlat (15 Gün Ücretsiz)"</strong> deyin. Kart bilgisi istenmez.</li>
+      </ul>
+      <div class="gorsel-cerceve"><img src="assets/img/ilk-kurulum.png" alt="İlk kurulum ekranı — davetiye kodu veya demo seçimi" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">İlk kurulum ekranı</p>
+      <p>Demo süresince tüm özellikler sınırsız çalışır. Kalan gün sayısı her girişte ekranın üstünde görünür.</p>
+      <h3>Demodan lisansa geçiş</h3>
+      <p>Programı beğendiğinizde WhatsApp'tan bize yazın, size özel davetiye kodunuzu iletelim. Kodu lisans ekranına girdiğinizde <strong>tüm ürünleriniz, satışlarınız ve ayarlarınız aynen kalır</strong>; kaldığınız yerden devam edersiniz.</p>
+      <div class="gorsel-cerceve"><img src="assets/img/lisans-aktivasyon.jpg" alt="Lisans aktivasyon ekranı — davetiye kodu girişi" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">Davetiye kodu ile lisansa geçiş</p>
+    </section>
+
+    <!-- 3 -->
+    <section id="giris">
+      <h2><span class="bolum-no">3</span> Giriş ve kullanıcılar</h2>
+      <p>Programda iki tür kullanıcı vardır:</p>
+      <div class="yetki-izgara">
+        <div class="yetki-kart">
+          <h4>👑 Yönetici (siz)</h4>
+          <ul>
+            <li>Kasada satış yapar</li>
+            <li>Yönetim Paneli'ne girer: ürünler, personel, veresiye, rapor, yedek, yazıcı</li>
+            <li>Kasiyer ekler ve kaldırır</li>
+          </ul>
+        </div>
+        <div class="yetki-kart">
+          <h4>🧑‍💼 Kasiyer</h4>
+          <ul>
+            <li>Kasada satış yapar</li>
+            <li>Veresiye satış ve tahsilat yapabilir</li>
+            <li>Yönetim Paneli'ni göremez</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Kasiyer eklemek</h3>
+      <p><strong>Yönetim Paneli → 👥 Personel → ➕ Kasiyer Ekle</strong>. Her kasiyere ayrı kullanıcı adı ve şifre verin. İşten ayrılan kasiyeri <strong>🗑 Kaldır</strong> ile kapatabilirsiniz; hesabı girişe kapanır ama yaptığı satışlar kayıtlarda kalır.</p>
+      <p>Kendi şifrenizi değiştirmek için: <strong>Personel → 🔑 Şifremi Değiştir</strong>.</p>
+      <h3>"Giriş bilgilerimi hatırla"</h3>
+      <p>Bu kutu işaretliyken kullanıcı adınız ve şifreniz bir sonraki açılışta hazır gelir. Kasiyerlerin de kullandığı bir bilgisayarda yönetici olarak girerken işareti kaldırın. İşareti kaldırdığınız anda kayıtlı bilgi silinir.</p>
+      <div class="gorsel-cerceve"><img src="assets/img/giris.png" alt="OZR POS giriş ekranı" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">Giriş ekranı</p>
+    </section>
+
+    <!-- 4 -->
+    <section id="kasa">
+      <h2><span class="bolum-no">4</span> Kasa ekranında satış</h2>
+      <div class="gorsel-cerceve"><img src="assets/img/satis.png" alt="Kasa (satış) ekranı" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">Kasa ekranı</p>
+      <h3>Ürün eklemek</h3>
+      <ul>
+        <li><strong>Barkodu okutun.</strong> Ürün anında sepete düşer, toplam kendiliğinden güncellenir.</li>
+        <li><strong>Birden çok adet:</strong> barkod alanına <code>3*</code> yazıp barkodu okutun. 3 adet birden eklenir.</li>
+        <li><strong>Barkodu okunmuyor mu?</strong> <kbd>F7</kbd> ile ürünü adıyla arayın (ör. "ülker çikolata") ve sepete ekleyin.</li>
+        <li><strong>Adet değiştirmek:</strong> sepetteki satıra çift tıklayın.</li>
+        <li><strong>Satır silmek:</strong> <kbd>Del</kbd> seçili satırı siler. Seçili satır yoksa son ekleneni siler.</li>
+        <li><strong>Sepeti boşaltmak:</strong> <kbd>Esc</kbd>. Yanlışlıkla silinmesin diye onay sorulur.</li>
+      </ul>
+      <h3>Ödeme almak</h3>
+      <ul>
+        <li><strong>Nakit:</strong> <kbd>F5</kbd> nakit penceresini açar. Müşterinin verdiği tutarı yazın; para üstü anında hesaplanır, <kbd>Enter</kbd> ile bitirin. Müşteri tam para verdiyse bir şey yazmadan <strong><kbd>F5</kbd> <kbd>F5</kbd></strong> ile satışı kapatın.</li>
+        <li><strong>Kart:</strong> <kbd>F6</kbd>.</li>
+        <li><strong>Veresiye:</strong> <kbd>F9</kbd>. Ayrıntılar <a href="#veresiye">Veresiye defteri</a> bölümünde.</li>
+      </ul>
+      <h3>İndirim ve fiyat işlemleri</h3>
+      <ul>
+        <li><kbd>F3</kbd> <strong>İndirim:</strong> sepete tutar (₺) veya yüzde (%) olarak indirim uygulayın.</li>
+        <li><kbd>F8</kbd> <strong>Fiyat Sor:</strong> müşteri "bu kaç para?" diye sorduğunda ürünü okutun. Fiyat görünür, sepete eklenmez.</li>
+        <li><kbd>F2</kbd> <strong>Hızlı Fiyat Güncelleme:</strong> raftaki fiyat değiştiyse ürünü okutup yeni fiyatı oradan kaydedin. Yönetim paneline girmeniz gerekmez.</li>
+      </ul>
+      <h3>Kayıtlı olmayan barkodlar</h3>
+      <p>Sistemde olmayan bir barkod okutulursa uyarı sesi çıkar ve barkod <strong>⚠ Bulunamayan</strong> listesine yazılır. Gün içinde biriken bu barkodları üst çubuktaki butondan saatleriyle birlikte görür, ardından <a href="#urunler">Ürünler</a> sekmesinden tanımlarsınız. Hiçbir eksik ürün gözden kaçmaz.</p>
+      <h3>Üst çubuk</h3>
+      <p>Sağ üstte ses (🔊/🔇), açık/koyu tema (☀/🌙) düğmeleri ve bağlantı göstergesi bulunur. Gösterge kırmızıysa internet yoktur, ama <strong>satış yapmaya devam edebilirsiniz</strong>.</p>
+    </section>
+
+    <!-- 5 -->
+    <section id="kisayollar">
+      <h2><span class="bolum-no">5</span> Klavye kısayolları</h2>
+      <p>Kasada fareye hiç dokunmadan çalışabilirsiniz. Bu tabloyu yazdırıp kasanın yanına asabilirsiniz.</p>
+      <div class="tablo-sar">
+        <table class="kilavuz-tablo">
+          <thead><tr><th>Tuş</th><th>İşlev</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>F1</kbd></td><td>Barkod alanına dön (okuyucu okumuyorsa önce buna basın)</td></tr>
+            <tr><td><kbd>F2</kbd></td><td>Hızlı fiyat güncelleme</td></tr>
+            <tr><td><kbd>F3</kbd></td><td>İndirim uygula (₺ veya %)</td></tr>
+            <tr><td><kbd>F4</kbd></td><td>Tüm hızlı ürünleri göster</td></tr>
+            <tr><td><kbd>F5</kbd></td><td>Nakit ödeme (<kbd>F5</kbd> <kbd>F5</kbd> = tam para ile hızlı kapanış)</td></tr>
+            <tr><td><kbd>F6</kbd></td><td>Kredi kartı ile ödeme</td></tr>
+            <tr><td><kbd>F7</kbd></td><td>Ürünü isimle ara</td></tr>
+            <tr><td><kbd>F8</kbd></td><td>Fiyat sor (sepete eklemeden)</td></tr>
+            <tr><td><kbd>F9</kbd></td><td>Veresiye: deftere yaz veya borç ödemesi al</td></tr>
+            <tr><td><kbd>Ctrl</kbd> + <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd></td><td>Kasa 1 / 2 / 3 sepetine geç</td></tr>
+            <tr><td><kbd>Del</kbd></td><td>Seçili satırı (yoksa son satırı) sil</td></tr>
+            <tr><td><kbd>Esc</kbd></td><td>Sepeti temizle (onay sorar) · açık pencereyi kapat</td></tr>
+            <tr><td><code>3*</code> + barkod</td><td>Ürünü 3 adet ekle (istediğiniz sayıyı yazın)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="coklu-sepet">
+      <h2><span class="bolum-no">6</span> Çoklu sepet</h2>
+      <p>Kasada aynı anda <strong>3 ayrı sepet</strong> açık tutabilirsiniz. Örneğin müşteri "bir şey unuttum" deyip rafa döndü: <kbd>Ctrl</kbd>+<kbd>2</kbd> ile ikinci sepete geçip sıradaki müşteriye satış yapın. İlk müşteri döndüğünde <kbd>Ctrl</kbd>+<kbd>1</kbd> ile sepeti kaldığı yerden açın.</p>
+      <p>Kasa 1 / 2 / 3 düğmelerine tıklayarak fareyle de geçiş yapabilirsiniz.</p>
+    </section>
+
+    <!-- 7 -->
+    <section id="hizli-urunler">
+      <h2><span class="bolum-no">7</span> Hızlı ürün tuşları</h2>
+      <p>Ekmek, buz, poşet, simit gibi barkodsuz veya sık satılan ürünler için kasada tek tıkla eklenen tuşlar tanımlayın.</p>
+      <ul>
+        <li><strong>Eklemek:</strong> hızlı ürünler alanındaki <strong>+ Ekle</strong> düğmesi. Barkodu olmayan ürüne kendiniz benzersiz bir kod verin (ör. <code>BUZ001</code>) ve kısa bir düğme adı yazın.</li>
+        <li><strong>Düzenlemek veya kaldırmak:</strong> tuşa <strong>sağ tıklayın</strong>.</li>
+        <li><strong>Sırayı değiştirmek:</strong> tuşu sürükleyip istediğiniz yere bırakın.</li>
+        <li><strong>Hepsini görmek:</strong> <kbd>F4</kbd> veya <strong>⤢ Tümü</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- 8 -->
+    <section id="veresiye">
+      <h2><span class="bolum-no">8</span> Veresiye defteri</h2>
+      <p>Mahalle müşterinizin borcunu kağıt deftere yazmanıza gerek yok. OZR POS borcu satışla birlikte kaydeder, fişe yazar ve defteri kendi kendine yedekler.</p>
+
+      <h3>Veresiye satış (deftere yazma)</h3>
+      <ol>
+        <li>Ürünleri her zamanki gibi sepete ekleyin.</li>
+        <li><kbd>F9</kbd>'a basın. Müşteriyi adından veya telefonundan arayıp seçin.</li>
+        <li>Onaylayın. Sepet müşterinin defterine yazılır.</li>
+      </ol>
+      <p>Müşteri listede yoksa aynı pencereden <strong>➕ Yeni Müşteri</strong> ile hemen ekleyin. Ad dışındaki bilgiler (telefon, not, borç limiti) isteğe bağlıdır. Kağıt defterden geçiyorsanız müşterinin <strong>mevcut borcunu</strong> eklerken girebilirsiniz.</p>
+
+      <h3>Borç ödemesi almak (tahsilat)</h3>
+      <ol>
+        <li><kbd>F9</kbd> → müşteriyi seçin → <strong>💰 Ödeme Al</strong>.</li>
+        <li>Alınan tutarı yazın veya borcun tamamı için <strong>Tümünü Öde</strong>'ye basın. Ödemenin nakit mi kart mı olduğunu seçin.</li>
+        <li>Onay penceresinde tutarı kontrol edip onaylayın.</li>
+      </ol>
+      <div class="kutu kutu-guven">
+        <p>✓ Tutar alanı bilerek <strong>boş</strong> gelir ve her ödeme bir onay penceresinden geçer. Yanlışlıkla ödeme kaydedilmez.</p>
+      </div>
+
+      <h3>Fiş ve makbuz</h3>
+      <p>Veresiye fişinde müşterinin adı, <strong>önceki borcu</strong>, <strong>bu alışveriş</strong> ve <strong>toplam borcu</strong> yazar. Müşteri ne kadar borcu olduğunu her alışverişte görür, tartışma çıkmaz. Ödeme alındığında ise önceki borç, ödenen tutar ve kalan borcu gösteren ayrı bir <strong>ödeme makbuzu</strong> basılabilir.</p>
+
+      <h3>Borç limiti</h3>
+      <p>Her müşteriye isteğe bağlı bir borç limiti koyabilirsiniz (boş bırakılırsa limitsiz). Limit aşılacaksa program <strong>kırmızı uyarıyla onay ister</strong>. Satış engellenmez, karar sizindir.</p>
+
+      <h3>Hesap dökümü ve Yönetim → 📒 Veresiye</h3>
+      <p>Müşteri penceresindeki <strong>📜 Hesap Dökümü</strong> o müşterinin tüm alışveriş ve ödemelerini tarih sırasıyla gösterir. Yönetim Paneli'ndeki <strong>📒 Veresiye</strong> sekmesinde ise tüm müşterileri ve güncel borçlarını tek ekranda görürsünüz.</p>
+
+      <h3>Kim ne yapabilir?</h3>
+      <div class="yetki-izgara">
+        <div class="yetki-kart">
+          <h4>🧑‍💼 Kasiyer</h4>
+          <ul>
+            <li>Veresiye satış</li>
+            <li>Borç ödemesi alma</li>
+            <li>Yeni müşteri ekleme</li>
+          </ul>
+        </div>
+        <div class="yetki-kart">
+          <h4>👑 Yalnızca yönetici</h4>
+          <ul>
+            <li>Borç düzeltme (açıklamalı, ör. iade)</li>
+            <li>Limit belirleme, müşteri düzenleme</li>
+            <li>Müşteriyi pasife alma</li>
+            <li>Excel'den defter yükleme</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Defteriniz kaybolmaz</h3>
+      <p>Veresiye kayıtları şifreli veritabanında tutulur ve her değişiklikten sonra yedeklenir. Ayrıca okunabilir bir <strong>Excel defteri</strong> (<code>veresiye_defteri.xlsx</code>) olarak Excel yedek klasörünüzdeki <code>veresiye</code> klasörüne yazılır. Son 60 günün günlük kopyaları da saklanır.</p>
+      <ul>
+        <li><strong>📤 Excel'e Aktar:</strong> defteri istediğiniz an Excel'e yazar.</li>
+        <li><strong>📂 Excel Klasörü:</strong> defterin bulunduğu klasörü açar.</li>
+        <li><strong>📥 Excel'den Yükle:</strong> yeni bir bilgisayara geçtiğinizde defteri bu Excel dosyasından geri getirir. Mevcut kayıtların üstüne yazılmasın diye yalnızca defter boşken çalışır.</li>
+      </ul>
+    </section>
+
+    <!-- 9 -->
+    <section id="urunler">
+      <h2><span class="bolum-no">9</span> Ürünler ve toplu yükleme</h2>
+      <div class="gorsel-cerceve"><img src="assets/img/urunler.png" alt="Ürün yönetimi ekranı" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">Yönetim Paneli → Ürünler</p>
+      <h3>Tek tek ürün eklemek</h3>
+      <p><strong>Yönetim Paneli → 📦 Ürünler → ➕ Ürün Ekle</strong>. Barkodu okutun, ürün adını ve satış fiyatını yazın. Listede ürün adı veya barkodla arayabilir, ürünleri <strong>✏ Düzenle</strong> ve <strong>🗑 Sil</strong> ile yönetebilirsiniz.</p>
+      <h3>Excel / CSV listesinden toplu yükleme</h3>
+      <p>Eski programınızdan veya toptancınızdan aldığınız ürün listesini tek seferde yükleyebilirsiniz: <strong>📋 CSV / TXT Yükle</strong>.</p>
+      <ul>
+        <li>Excel'de dosyayı <strong>"CSV UTF-8 (virgülle ayrılmış)"</strong> olarak kaydedin. Noktalı virgül (;) ve virgül (,) ayraçlarının ikisi de desteklenir.</li>
+        <li>İlk satır başlık olmalıdır. Program <strong>Barkod</strong>, <strong>Ürün Adı</strong> ve <strong>Fiyat</strong> sütunlarını başlık adından kendisi bulur. "Satış Fiyatı" ile "Alış Fiyatı" yan yanaysa satış fiyatını seçer.</li>
+        <li>Başlıklar tanınmazsa sıralama <code>Barkod;İsim;Fiyat</code> kabul edilir.</li>
+        <li>Bir dosyada en fazla 10.000 ürün yüklenir. Daha büyük listeleri parçalara bölün.</li>
+      </ul>
+      <div class="tablo-sar">
+        <table class="kilavuz-tablo">
+          <thead><tr><th>Barkod</th><th>Ürün Adı</th><th>Fiyat</th></tr></thead>
+          <tbody>
+            <tr><td>8690000000017</td><td>Su 0,5 L</td><td>10,00</td></tr>
+            <tr><td>8690000000024</td><td>Ekmek</td><td>12,50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="gorsel-alti">Örnek dosya düzeni</p>
+      <div class="kutu kutu-guven">
+        <p>✓ Yüklenen listedeki bir barkod sistemde <strong>farklı ad veya fiyatla</strong> zaten varsa, ya da aynı dosyada aynı barkod iki farklı şekilde geçiyorsa program her birini size tek tek sorar. Hiçbir ürün habersizce ezilmez.</p>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="raporlar">
+      <h2><span class="bolum-no">10</span> Raporlar</h2>
+      <div class="gorsel-cerceve"><img src="assets/img/rapor.png" alt="Satış raporları ekranı" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">Yönetim Paneli → Rapor</p>
+      <p><strong>Yönetim Paneli → 📊 Rapor</strong> sekmesinde <strong>Bugün</strong>, <strong>Bu Hafta</strong>, <strong>Bu Ay</strong>, <strong>Bu Yıl</strong> ve <strong>Tüm Zamanlar</strong> düğmeleriyle tek tıkla rapor alın. Başka bir tarih aralığı için başlangıç ve bitiş tarihini seçip <strong>📈 Rapor Al</strong>'a basın.</p>
+      <p>Raporda şunları görürsünüz:</p>
+      <ul>
+        <li>Toplam ciro, <strong>nakit</strong> ve <strong>kart</strong> ayrımı, satış sayısı</li>
+        <li><strong>Veresiye satış</strong> (ciroya dahildir ama kasaya girmemiştir) ve <strong>veresiye tahsilat</strong> tutarları</li>
+        <li>Şu anki toplam <strong>açık veresiye</strong>, yani müşterilerin size toplam borcu</li>
+      </ul>
+    </section>
+
+    <!-- 11 -->
+    <section id="yazici">
+      <h2><span class="bolum-no">11</span> Fiş yazıcı ve market adı</h2>
+      <p>OZR POS, Windows'a kurulu ESC/POS uyumlu termal fiş yazıcılarla çalışır.</p>
+      <ol>
+        <li><strong>Yönetim Paneli → 🖨 Yazıcı</strong> sekmesini açın.</li>
+        <li>Listeden yazıcınızı seçin (görünmüyorsa <strong>↻ Yenile</strong>) ve <strong>"Fiş yazdırmayı etkinleştir"</strong> kutusunu işaretleyin.</li>
+        <li>Fiş başlığına <strong>market adınızı</strong>, isterseniz adres ve telefonunuzu yazın. Fişte ürün adı ve kasiyer adı görünsün mü seçin, alt mesajınızı ekleyin (ör. "Yine bekleriz").</li>
+        <li><strong>💾 Kaydet</strong>, ardından <strong>🖨 Test Fişi Bas</strong>.</li>
+      </ol>
+      <div class="kutu kutu-dikkat">
+        <p>⚖ OZR POS'un yazdırdığı fiş <strong>bilgi fişidir, mali belge değildir</strong>. Yasal zorunluluk olan mali onaylı yazarkasanızı (ÖKC) kullanmaya devam edin.</p>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section id="yedek">
+      <h2><span class="bolum-no">12</span> Yedekleme ve geri yükleme</h2>
+      <div class="gorsel-cerceve"><img src="assets/img/yedek.png" alt="Yedekleme ekranı" loading="lazy" data-buyut></div>
+      <p class="gorsel-alti">Yönetim Paneli → Yedek</p>
+      <p>Yedeklemeyi hatırlamanız gerekmez, program kendisi yapar:</p>
+      <ul>
+        <li><strong>Günlük yedek:</strong> tüm veritabanının her gün bir şifreli yedeği alınır. Bilgisayar gece kapalı veya uykudaysa, açıldığında telafi edilir. Son 30 günün yedeği saklanır.</li>
+        <li><strong>İşlem yedeği:</strong> ürün ekleme, silme, fiyat değişikliği, toplu yükleme ve veresiye işlemlerinden hemen sonra ek bir yedek alınır.</li>
+        <li><strong>Excel ürün listesi:</strong> ürün listeniz her gün okunabilir bir Excel dosyası olarak da kaydedilir. <strong>📥 Excel Yedek Al</strong> ile istediğiniz an alabilir, <strong>📁 Klasörü Aç</strong> ile görebilirsiniz.</li>
+      </ul>
+      <p>Yedekler <strong>AES-256</strong> ile şifrelidir. Bilgisayarınızı başkası alsa bile yedek dosyaları açılamaz.</p>
+      <h3>Yedekten geri dönmek</h3>
+      <ol>
+        <li><strong>Yönetim Paneli → 💾 Yedek</strong> sekmesinde listeden dönmek istediğiniz tarihteki yedeği seçin.</li>
+        <li><strong>↩ Geri Yükle</strong>'ye basıp onaylayın. Program kapanır.</li>
+        <li>Programı <strong>yeniden açın</strong>. Geri yükleme açılışta tamamlanır.</li>
+      </ol>
+      <div class="kutu kutu-ipucu">
+        <p>💡 Geri yükleme başlamadan önce mevcut veriniz ayrıca saklanır. İşlem yarıda kalırsa (örneğin elektrik kesilirse) program bir sonraki açılışta verinizi eski haline döndürür.</p>
+      </div>
+      <div class="kutu kutu-dikkat">
+        <p>⚠ Yedek ZIP dosyalarını Windows'ta çift tıklayarak açmaya çalışırsanız "geçersiz" uyarısı alırsınız. Bu <strong>normaldir</strong>: dosyalar şifrelidir ve yalnızca OZR POS açabilir.</p>
+      </div>
+      <h3>Bilgisayar değiştirirken</h3>
+      <p>Yeni bilgisayara geçişte verilerinizin taşınması için bize WhatsApp'tan yazın, birlikte yapalım. Yedeklerinizi düzenli olarak bir USB belleğe veya Google Drive klasörüne de kopyalamanızı öneririz.</p>
+    </section>
+
+    <!-- 13 -->
+    <section id="guncelleme">
+      <h2><span class="bolum-no">13</span> Güncellemeler</h2>
+      <p>Yeni sürüm çıktığında giriş ekranında bildirim görürsünüz. <strong>⬇ Şimdi Güncelle</strong> derseniz program yeni sürümü indirip kurar ve yeniden açılır. Yoğun bir anınızdaysanız <strong>Sonra Hatırlat</strong> deyin.</p>
+      <ul>
+        <li>Ürünleriniz, satışlarınız, veresiye defteriniz ve ayarlarınız güncellemeden <strong>etkilenmez</strong>.</li>
+        <li>Yeni sürüm herhangi bir nedenle açılamazsa program <strong>kendiliğinden önceki sürüme döner</strong>. Kasanız kapalı kalmaz.</li>
+        <li>Siteye gelip yeniden indirmenize gerek yoktur.</li>
+        <li>Her sürümde nelerin değiştiğini <a href="https://github.com/EmirhanOzer07/OZR-Pos/blob/main/CHANGELOG.md" target="_blank" rel="noopener">sürüm notlarından</a> okuyabilirsiniz.</li>
+      </ul>
+    </section>
+
+    <!-- 14 -->
+    <section id="sorun-giderme">
+      <h2><span class="bolum-no">14</span> Sorun giderme</h2>
+      <div class="tablo-sar">
+        <table class="kilavuz-tablo">
+          <thead><tr><th>Durum</th><th>Ne yapmalı?</th></tr></thead>
+          <tbody>
+            <tr><td>Barkod okuyucu okuyor ama ürün sepete gelmiyor</td><td><kbd>F1</kbd>'e basıp barkod alanına dönün, tekrar okutun. Okuyucunun "klavye modunda" olduğundan emin olun.</td></tr>
+            <tr><td>"Barkod bulunamadı" uyarısı</td><td>Ürün sistemde kayıtlı değil. Barkod <strong>⚠ Bulunamayan</strong> listesine yazıldı. Yönetici olarak ürünü <a href="#urunler">Ürünler</a> sekmesinden ekleyin.</td></tr>
+            <tr><td>Fiş çıkmıyor</td><td>Yazıcı sekmesinde yazıcının seçili ve "Fiş yazdırmayı etkinleştir"in işaretli olduğunu kontrol edin, <strong>Test Fişi Bas</strong> deyin. Yazıcının açık, kağıdının takılı olduğundan emin olun.</td></tr>
+            <tr><td>Güncelleme yapılamıyor</td><td>Program "Program Files" içindeyse <code>OZRPos</code> klasörünü <code>C:\OZRPos</code> gibi bir yere taşıyın.</td></tr>
+            <tr><td>Bağlantı göstergesi kırmızı</td><td>İnternet yok. Satış, ürün ve raporlar çalışmaya devam eder; internet gelince lisans kontrolü kendiliğinden yapılır.</td></tr>
+            <tr><td>"Oturum süresi doldu"</td><td>Güvenlik için belli bir süre sonra yeniden giriş istenir. Tamamlanmış satışlarınız kayıtlıdır, kaybolmaz.</td></tr>
+            <tr><td>Windows "bilgisayarınızı korudu" diyor</td><td><strong>Ek bilgi → Yine de çalıştır</strong>. Ayrıntı: <a href="#kurulum">Kurulum</a>.</td></tr>
+            <tr><td>Yedek ZIP'i açılmıyor</td><td>Normal, yedekler şifrelidir. Geri dönmek için <a href="#yedek">Yedek</a> sekmesini kullanın.</td></tr>
+            <tr><td>Yönetici şifremi unuttum</td><td>WhatsApp'tan bize yazın, birlikte çözelim.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 15 -->
+    <section id="destek">
+      <h2><span class="bolum-no">15</span> Destek</h2>
+      <p>Kurulum, ürün aktarma, yazıcı ayarı veya herhangi bir sorunda doğrudan geliştiriciye ulaşırsınız. Çağrı merkezi yok, sıra beklemezsiniz. Gerekirse uzak bağlantıyla bilgisayarınıza bağlanıp birlikte çözeriz.</p>
+      <p>Program, sorunları siz fark etmeden görebilmemiz için internet varken kısa bir <strong>teknik sağlık raporu</strong> gönderir (sürüm, son yedek zamanı, hata özetleri gibi). Satış, ürün, fiyat, müşteri ve veresiye bilgileriniz bu rapora <strong>hiçbir koşulda girmez</strong>. Ayrıntılar: <a href="gizlilik.html">Gizlilik</a>.</p>
+      <div class="iletisim-butonlar" style="justify-content:flex-start; margin-top:20px;">
+        <a href="#" class="btn btn-wa wa-link">WhatsApp'tan Yaz</a>
+        <a href="#" class="btn btn-eposta mail-link">✉ E-posta Gönder</a>
+      </div>
+      <p class="tel-satiri">veya arayın: <a href="#" class="tel-link">📞 <span class="tel-metin"></span></a></p>
+    </section>
+
+  </main>
+</div>
+
+<!-- Sabit WhatsApp balonu -->
+<a href="#" class="wa-balon wa-link" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.4 2 11.9c0 1.8.5 3.5 1.4 5L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.4 10-9.9S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.3-1.3-2.8-1.3-4.3C3.6 7.4 7.4 3.7 12 3.7s8.4 3.7 8.4 8.2S16.6 20 12 20zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.7-1.2-1.5-1.4-1.7-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<footer class="alt-bilgi">
+  <div class="kapsayici">
+    <div class="alt-ic">
+      <a href="index.html" class="marka"><img src="assets/img/logo.png" alt=""><span>OZR POS</span></a>
+      <div class="alt-linkler">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="indir.html">İndir</a>
+        <a href="index.html#sss">SSS</a>
+        <a href="gizlilik.html">Gizlilik</a>
+      </div>
+    </div>
+    <div class="alt-uyari">
+      © <span id="yil"></span> OZR POS. Tüm hakları saklıdır.<br>
+      OZR POS bir satış takip ve işletme yönetim yazılımıdır; mali onaylı ödeme kaydedici cihaz (yazarkasa/ÖKC) yerine geçmez, yazdırdığı fişler mali belge niteliği taşımaz.
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("yil").textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
