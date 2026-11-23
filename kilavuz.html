@@ -282,9 +282,10 @@
       <h3>Excel / CSV listesinden toplu yükleme</h3>
       <p>Eski programınızdan veya toptancınızdan aldığınız ürün listesini tek seferde yükleyebilirsiniz: <strong>📋 CSV / TXT Yükle</strong>.</p>
       <ul>
-        <li>Excel'de dosyayı <strong>"CSV UTF-8 (virgülle ayrılmış)"</strong> olarak kaydedin. Noktalı virgül (;) ve virgül (,) ayraçlarının ikisi de desteklenir.</li>
-        <li>İlk satır başlık olmalıdır. Program <strong>Barkod</strong>, <strong>Ürün Adı</strong> ve <strong>Fiyat</strong> sütunlarını başlık adından kendisi bulur. "Satış Fiyatı" ile "Alış Fiyatı" yan yanaysa satış fiyatını seçer.</li>
-        <li>Başlıklar tanınmazsa sıralama <code>Barkod;İsim;Fiyat</code> kabul edilir.</li>
+        <li>Excel'de <strong>Farklı Kaydet</strong> ile <strong>CSV</strong> veya <strong>Metin (Sekmeyle ayrılmış)</strong> seçmeniz yeterli. Türkçe karakterler (ğ, ş, İ…) hangi CSV türünü seçerseniz seçin doğru okunur; noktalı virgül (;), virgül (,) ve sekme ayraçlarının hepsi desteklenir.</li>
+        <li>Program <strong>Barkod</strong>, <strong>Ürün Adı</strong> ve <strong>Fiyat</strong> sütunlarını başlık adından kendisi bulur. "Satış Fiyatı" ile "Alış Fiyatı" yan yanaysa satış fiyatını seçer.</li>
+        <li>Başlık satırı yoksa ya da başlıklar tanınmazsa sıralama <code>Barkod;İsim;Fiyat</code> kabul edilir.</li>
+        <li>Fiyatlar <code>12,50</code> · <code>1.250,00</code> · <code>12,50 TL</code> · <code>₺12,50</code> gibi yazılabilir. <code>1.250</code> gibi binlik mi ondalık mı olduğu belli olmayan bir fiyat tahminle yüklenmez; o satır size gösterilir.</li>
         <li>Bir dosyada en fazla 10.000 ürün yüklenir. Daha büyük listeleri parçalara bölün.</li>
       </ul>
       <div class="tablo-sar">
@@ -297,8 +298,12 @@
         </table>
       </div>
       <p class="gorsel-alti">Örnek dosya düzeni</p>
+      <div class="kutu kutu-ipucu">
+        <p>💡 Excel uzun barkodları sayı sanıp <code>8,69E+12</code> gibi gösterebilir. Böyle bir satır yüklenmez ve size bildirilir. Excel'de barkod sütununu seçip biçimini <strong>Metin</strong> yapın, dosyayı yeniden kaydedin.</p>
+      </div>
       <div class="kutu kutu-guven">
         <p>✓ Yüklenen listedeki bir barkod sistemde <strong>farklı ad veya fiyatla</strong> zaten varsa, ya da aynı dosyada aynı barkod iki farklı şekilde geçiyorsa program her birini size tek tek sorar. Hiçbir ürün habersizce ezilmez.</p>
+        <p>✓ Okunamayan satırlar atlanır ve yükleme sonunda <strong>satır numarasıyla</strong> listelenir; geri kalan ürünler normal şekilde yüklenir.</p>
       </div>
     </section>
 
@@ -347,10 +352,10 @@
       <ol>
         <li><strong>Yönetim Paneli → 💾 Yedek</strong> sekmesinde listeden dönmek istediğiniz tarihteki yedeği seçin.</li>
         <li><strong>↩ Geri Yükle</strong>'ye basıp onaylayın. Program kapanır.</li>
-        <li>Programı <strong>yeniden açın</strong>. Geri yükleme açılışta tamamlanır.</li>
+        <li>Programı <strong>yeniden açın</strong>. Geri yükleme açılışta tamamlanır ve sonucu ekranda bir mesajla gösterilir.</li>
       </ol>
       <div class="kutu kutu-ipucu">
-        <p>💡 Geri yükleme başlamadan önce mevcut veriniz ayrıca saklanır. İşlem yarıda kalırsa (örneğin elektrik kesilirse) program bir sonraki açılışta verinizi eski haline döndürür.</p>
+        <p>💡 Geri yükleme başlamadan önce mevcut verinizin yedeği otomatik alınır ve listede <strong>"geri yukleme oncesi"</strong> adıyla görünür. Yanlış tarihi seçtiyseniz bu yedekle eski halinize dönebilirsiniz. İşlem yarıda kalırsa (örneğin elektrik kesilirse) program bir sonraki açılışta verinizi eski haline döndürür.</p>
       </div>
       <div class="kutu kutu-dikkat">
         <p>⚠ Yedek ZIP dosyalarını Windows'ta çift tıklayarak açmaya çalışırsanız "geçersiz" uyarısı alırsınız. Bu <strong>normaldir</strong>: dosyalar şifrelidir ve yalnızca OZR POS açabilir.</p>
@@ -381,6 +386,8 @@
             <tr><td>Barkod okuyucu okuyor ama ürün sepete gelmiyor</td><td><kbd>F1</kbd>'e basıp barkod alanına dönün, tekrar okutun. Okuyucunun "klavye modunda" olduğundan emin olun.</td></tr>
             <tr><td>"Barkod bulunamadı" uyarısı</td><td>Ürün sistemde kayıtlı değil. Barkod <strong>⚠ Bulunamayan</strong> listesine yazıldı. Yönetici olarak ürünü <a href="#urunler">Ürünler</a> sekmesinden ekleyin.</td></tr>
             <tr><td>Fiş çıkmıyor</td><td>Yazıcı sekmesinde yazıcının seçili ve "Fiş yazdırmayı etkinleştir"in işaretli olduğunu kontrol edin, <strong>Test Fişi Bas</strong> deyin. Yazıcının açık, kağıdının takılı olduğundan emin olun.</td></tr>
+            <tr><td>"OZR POS zaten açık" mesajı</td><td>Program zaten çalışıyor. Açık pencereyi görev çubuğundan seçin. Program açılırken birkaç saniye bekleyin; simgeye tekrar tıklamanıza gerek yok.</td></tr>
+            <tr><td>CSV yüklemesinde bazı satırlar atlandı</td><td>Sonuç penceresinde satır numarası ve sebebi yazar (ör. barkod Excel'de bilimsel sayıya dönüşmüş, fiyat belirsiz). Excel'de o satırları düzeltip dosyayı yeniden yükleyin; daha önce aynen yüklenmiş ürünler tekrar eklenmez.</td></tr>
             <tr><td>Güncelleme yapılamıyor</td><td>Program "Program Files" içindeyse <code>OZRPos</code> klasörünü <code>C:\OZRPos</code> gibi bir yere taşıyın.</td></tr>
             <tr><td>Bağlantı göstergesi kırmızı</td><td>İnternet yok. Satış, ürün ve raporlar çalışmaya devam eder; internet gelince lisans kontrolü kendiliğinden yapılır.</td></tr>
             <tr><td>"Oturum süresi doldu"</td><td>Güvenlik için belli bir süre sonra yeniden giriş istenir. Tamamlanmış satışlarınız kayıtlıdır, kaybolmaz.</td></tr>
